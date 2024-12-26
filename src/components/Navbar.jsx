@@ -39,7 +39,6 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li><Link>Home</Link></li>
-            <li><Link>Services</Link></li>
             <li>
               <details>
                 <summary>Dashboard</summary>
@@ -51,10 +50,11 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>
+            <li><Link>Services</Link></li>
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <Link>Login</Link>
+          <Link to={'/login'}>Login</Link>
           {/* profile icon */}
           <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -66,7 +66,7 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow z-40">
                   <li><Link>Add Service</Link></li>
                   <li><Link>Manage Service</Link></li>
                   <li><Link>Booked Service</Link></li>
