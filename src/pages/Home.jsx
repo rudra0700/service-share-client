@@ -1,9 +1,10 @@
 import React from 'react';
+import Slider from '../components/Carousal';
 
 const Home = () => {
     return (
         <div>
-            from home
+            <Slider></Slider>
         </div>
     );
 };

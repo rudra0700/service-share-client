@@ -45,7 +45,7 @@ const Navbar = () => {
             <li>
               <details>
                 <summary>Dashboard</summary>
-                <ul className="w-40">
+                <ul className="w-40 z-40">
                   <li><Link>Add Service</Link></li>
                   <li><Link>Manage Service</Link></li>
                   <li><Link>Booked Service</Link></li>
@@ -64,12 +64,15 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 <img
                   alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                  src={user?.photoURL}
+                  referrerPolicy='no-referrer'
+                  title={user?.displayName}
+                  />
               </div>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-40 mt-3 w-52 p-2 shadow">
                         <li><Link>Add Service</Link></li>
                         <li><Link>Manage Service</Link></li>
                         <li><Link>Booked Service</Link></li>
