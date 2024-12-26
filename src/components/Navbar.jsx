@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { IoLogOutOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const {user, logout} = useContext(AuthContext)
@@ -68,12 +69,12 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow z-40">
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li><Link>Add Service</Link></li>
                         <li><Link>Manage Service</Link></li>
                         <li><Link>Booked Service</Link></li>
                         <li><Link>Service-to-do</Link></li>
-                        <li><Link onClick={logout}>Logout</Link></li>
+                        <li><Link onClick={logout}>Logout <IoLogOutOutline /></Link></li>
             </ul>
           </div>: <Link to={'/login'}>Login</Link>}
          
