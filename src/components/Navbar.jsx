@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+  const {user, logout} = useContext(AuthContext)
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -54,26 +56,27 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-3">
-          <Link to={'/login'}>Login</Link>
+          
           {/* profile icon */}
-          <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-        </div>
-      </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow z-40">
-                  <li><Link>Add Service</Link></li>
-                  <li><Link>Manage Service</Link></li>
-                  <li><Link>Booked Service</Link></li>
-                  <li><Link>Service-to-do</Link></li>
-                  <li><Link>Logout</Link></li>
-      </ul>
-    </div>
+          {user && user?.email ?  <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+              </div>
+            </div>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow z-40">
+                        <li><Link>Add Service</Link></li>
+                        <li><Link>Manage Service</Link></li>
+                        <li><Link>Booked Service</Link></li>
+                        <li><Link>Service-to-do</Link></li>
+                        <li><Link onClick={logout}>Logout</Link></li>
+            </ul>
+          </div>: <Link to={'/login'}>Login</Link>}
+         
         </div>
       </div>
     );
