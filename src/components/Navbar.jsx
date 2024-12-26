@@ -46,7 +46,7 @@ const Navbar = () => {
               <details>
                 <summary>Dashboard</summary>
                 <ul className="w-40 z-40">
-                  <li><Link>Add Service</Link></li>
+                  <li><Link to={'/addService'}>Add Service</Link></li>
                   <li><Link>Manage Service</Link></li>
                   <li><Link>Booked Service</Link></li>
                   <li><Link>Service-to-do</Link></li>
