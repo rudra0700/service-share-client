@@ -47,7 +47,7 @@ const Navbar = () => {
                 <summary>Dashboard</summary>
                 <ul className="w-40 z-40">
                   <li><Link to={'/addService'}>Add Service</Link></li>
-                  <li><Link>Manage Service</Link></li>
+                  <li><Link to={'/manageServices'}>Manage Service</Link></li>
                   <li><Link>Booked Service</Link></li>
                   <li><Link>Service-to-do</Link></li>
                 </ul>
@@ -73,8 +73,8 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-40 mt-3 w-52 p-2 shadow">
-                        <li><Link>Add Service</Link></li>
-                        <li><Link>Manage Service</Link></li>
+                        <li><Link to={'/addService'}>Add Service</Link></li>
+                        <li><Link to={'/manageServices'}>Manage Service</Link></li>
                         <li><Link>Booked Service</Link></li>
                         <li><Link>Service-to-do</Link></li>
                         <li><Link onClick={logout}>Logout <IoLogOutOutline /></Link></li>

@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 import AllServices from "../pages/AllServices";
 import ErrorPage from "../pages/ErrorPage";
 import AddService from "../pages/AddService";
+import ManageServices from "../pages/ManageServices";
+import UpdateService from "../pages/UpdateService";
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
             {
                 path: '/addService',
                 element: <AddService></AddService>
+            },
+            {
+                path: '/manageServices',
+                element: <ManageServices></ManageServices>
+            },
+            {
+                path: '/updateService/:id',
+                element: <UpdateService></UpdateService>
             }
 
         ]
