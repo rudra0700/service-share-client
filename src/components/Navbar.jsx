@@ -53,8 +53,7 @@ const Navbar = () => {
                 </ul>
               </details>
             </li>}
-           
-            <li><Link>Services</Link></li>
+            <li><Link to={'/allServices'}>Services</Link></li>
           </ul>
         </div>
         <div className="navbar-end space-x-3">
