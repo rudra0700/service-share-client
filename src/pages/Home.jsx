@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from '../components/Carousal';
 import ServiceCard from '../components/ServiceCard';
 import { Link } from 'react-router-dom';
@@ -7,22 +7,31 @@ import { MdOutlineMasks } from "react-icons/md";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import { MdSanitizer } from "react-icons/md";
 import { GiWinterGloves } from "react-icons/gi";
+import axios from 'axios';
 
 const Home = () => {
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+       fetchAllServices()
+    }, [])
+
+    const fetchAllServices = async  () => {
+        const {data} = await axios.get("http://localhost:5000/services")
+        // console.log(data);
+        setServices(data);
+    }
     return (
         <div>
             <Slider></Slider>
             <div className='flex justify-between items-center max-w-7xl mx-auto'>
-             <h3 className='mb-4 text-center text-3xl font-semibold'>Popular Services</h3>
-             <Link to={'/allServices'}>View All</Link>
+                <h3 className='mb-4 text-center text-3xl font-semibold'>Popular Services</h3>
+                <Link to={'/allServices'}>View All</Link>
             </div>
-              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto'>
-                   <ServiceCard></ServiceCard>
-                   <ServiceCard></ServiceCard>
-                   <ServiceCard></ServiceCard>
-                   <ServiceCard></ServiceCard>
-                   <ServiceCard></ServiceCard>
-                   <ServiceCard></ServiceCard>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-10'>
+                {
+                    services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+                }
               </div>
                 {/* schedule section */}
                <div className='max-w-7xl mx-auto mt-14'>

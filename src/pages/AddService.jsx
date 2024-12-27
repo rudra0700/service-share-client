@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const AddService = () => {
     const {user} = useContext(AuthContext);
@@ -33,10 +34,10 @@ const AddService = () => {
         try {
             const {data} = await axios.post("http://localhost:5000/add-service", formData);
             form.reset()
-            console.log(data);
+            toast.success("Service added successfully")
 
         } catch (error) {
-          console.log(error.message);  
+          toast.error(error.message);  
         }
     }
     return (
