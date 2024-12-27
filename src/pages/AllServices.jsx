@@ -15,12 +15,11 @@ const AllServices = () => {
         }
         
         fetchAllServices()
-    }, [search])
+    }, [search, sort])
 
     console.log(services);
 
     const handleReset = () => {
-        setFilter('')
         setSearch('')
         setSort('')
        }
