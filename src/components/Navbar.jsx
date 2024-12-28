@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            {/* <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -22,20 +22,12 @@ const Navbar = () => {
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
-            </div>
-            <ul
+            </div> */}
+            {/* <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <Link>Home</Link>
-              <Link>Services</Link>
-              <li>
-                <a></a>
-                <ul className="p-2">
-                  <li><a>Submenu 1</a></li>
-                  <li><a>Submenu 2</a></li>
-                </ul>
-              </li>
-            </ul>
+             
+            </ul> */}
           </div>
           <a className="btn btn-ghost text-xl">SwiftServe</a>
         </div>
@@ -48,8 +40,8 @@ const Navbar = () => {
                 <ul className="w-40 z-40">
                   <li><Link to={'/addService'}>Add Service</Link></li>
                   <li><Link to={'/manageServices'}>Manage Service</Link></li>
-                  <li><Link>Booked Service</Link></li>
-                  <li><Link>Service-to-do</Link></li>
+                  <li><Link to={'/bookedService'}>Booked Service</Link></li>
+                  <li><Link to={'/serviceToDo'}>Service-to-do</Link></li>
                 </ul>
               </details>
             </li>}
@@ -75,8 +67,8 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-40 mt-3 w-52 p-2 shadow">
                         <li><Link to={'/addService'}>Add Service</Link></li>
                         <li><Link to={'/manageServices'}>Manage Service</Link></li>
-                        <li><Link>Booked Service</Link></li>
-                        <li><Link>Service-to-do</Link></li>
+                        <li><Link to={'/bookedService'}>Booked Service</Link></li>
+                        <li><Link to={'/serviceToDo'}>Service-to-do</Link></li>
                         <li><Link onClick={logout}>Logout <IoLogOutOutline /></Link></li>
             </ul>
           </div>: <Link to={'/login'}>Login</Link>}

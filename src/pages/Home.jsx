@@ -8,6 +8,7 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 import { MdSanitizer } from "react-icons/md";
 import { GiWinterGloves } from "react-icons/gi";
 import axios from 'axios';
+import {Helmet} from "react-helmet";
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -23,6 +24,9 @@ const Home = () => {
     }
     return (
         <div>
+             <Helmet>
+                <title>SwiftServe | Home</title>
+            </Helmet>
             <Slider></Slider>
             <div className='flex justify-between items-center max-w-7xl mx-auto'>
                 <h3 className='mb-4 text-center text-3xl font-semibold'>Popular Services</h3>

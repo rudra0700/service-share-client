@@ -3,6 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import {Helmet} from "react-helmet";
 
 const ManageServices = () => {
     const {user} = useContext(AuthContext);
@@ -46,6 +47,9 @@ const ManageServices = () => {
   }
     return (
         <section className='container px-4 mx-auto pt-12'>
+                          <Helmet>
+                              <title>SwiftServe | Manage Service</title>
+                          </Helmet>
       <div className='flex items-center gap-x-3'>
         <h2 className='text-lg font-medium text-gray-800 '>My Services</h2>
 

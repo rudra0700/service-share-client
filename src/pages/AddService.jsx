@@ -3,6 +3,7 @@ import { AuthContext } from '../provider/AuthProvider';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import {Helmet} from "react-helmet";
 
 const AddService = () => {
     const {user} = useContext(AuthContext);
@@ -45,6 +46,10 @@ const AddService = () => {
     }
     return (
         <div>
+            
+                           <Helmet>
+                              <title>SwiftServe | Add Service</title>
+                          </Helmet>
             <h3 className='text-center text-3xl font-semibold'>Add Your Service</h3>
              <form className='max-w-7xl mx-auto min-h-[calc(100vh-306px)] mt-5' onSubmit={handleAddService}>
                  <div className='flex gap-4 flex-col lg:flex-row'>

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import ServiceCard from '../components/ServiceCard';
+import {Helmet} from "react-helmet";
 
 const AllServices = () => {
     const [services, setServices] = useState([]);
@@ -25,6 +26,9 @@ const AllServices = () => {
        }
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between'>
+                         <Helmet>
+                              <title>SwiftServe | All Services</title>
+                          </Helmet>
         <div>
           <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
             <div>

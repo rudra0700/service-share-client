@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service}) => {
-     const {photo, serviceName, price, description, provider} = service;
+     const {_id, photo, serviceName, price, description, provider} = service;
     return (
         <div className="card bg-base-100 shadow-xl">
         <figure>
@@ -20,7 +21,7 @@ const ServiceCard = ({service}) => {
             </div>
           <p>{description.substring(0, 100)}...</p>
           <div className="card-actions justify-end">
-            <div className="badge badge-outline">View Details</div>
+            <Link to={`/serviceDetails/${_id}`} className="badge badge-outline">View Details</Link>
           </div>
         </div>
       </div>

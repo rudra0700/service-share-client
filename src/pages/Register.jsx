@@ -5,6 +5,7 @@ import registerLottie from '../assets/lottifiles/register.json'
 import Lottie from 'lottie-react';
 import { Link, NavLink } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import {Helmet} from "react-helmet";
 
 
 const Register = () => {
@@ -32,6 +33,9 @@ const Register = () => {
     
     return (
     <div className="hero min-h-screen">
+                                <Helmet>
+                                    <title>SwiftServe | Register</title>
+                                </Helmet>
     <div className="hero-content flex-col lg:flex-row-reverse">
       <div className="text-center lg:text-left hidden md:block w-[500px]">
           <Lottie animationData={registerLottie}></Lottie>

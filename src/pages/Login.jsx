@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import toast from 'react-hot-toast';
+import {Helmet} from "react-helmet";
 
 const Login = () => {
     const {loginUser, googleLogin} = useContext(AuthContext);
@@ -24,6 +25,9 @@ const Login = () => {
     }
     return (
         <div className="hero min-h-screen">
+                          <Helmet>
+                              <title>SwiftServe | Login</title>
+                          </Helmet>
         <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left hidden md:block w-[500px]">
               <Lottie animationData={loginLottie}></Lottie>
