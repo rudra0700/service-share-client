@@ -8,9 +8,9 @@ const ServiceToDoTable = ({service}) => {
     }
     return (
         <tr>
-                                      <Helmet>
-                                        <title>SwiftServe | Service To Do</title>
-                                    </Helmet>
+          <Helmet>
+              <title>SwiftServe | Service To Do</title>
+           </Helmet>
         <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
           {serviceName}
         </td>

@@ -16,10 +16,10 @@ const ServiceCard = ({service}) => {
             <div className="badge">$ {price}</div>
           </h2>
             <div className='flex items-center justify-between'>
-               <h5>Provided By : {provider?.displayName}</h5>
+               <h5 className='font-medium text-gray-600'>Provided By : {provider?.displayName}</h5>
                 <img src={provider?.photo} className='w-10 h-10 rounded-full object-cover' alt="provider image" />
             </div>
-          <p>{description.substring(0, 100)}...</p>
+          <p className='text-gray-600'>{description.substring(0, 100)}...</p>
           <div className="card-actions justify-end">
             <Link to={`/serviceDetails/${_id}`} className="badge badge-outline">View Details</Link>
           </div>

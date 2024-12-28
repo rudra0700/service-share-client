@@ -11,8 +11,7 @@ const MainLayout = () => {
             <Navbar></Navbar>
             <Outlet></Outlet>
              <div className='mt-24'>
-
-            <Footer></Footer>
+                <Footer></Footer>
              </div>
         </div>
     );

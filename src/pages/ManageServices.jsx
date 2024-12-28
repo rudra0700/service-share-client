@@ -14,14 +14,14 @@ const ManageServices = () => {
     }, [user?.email])
 
     const fetchAllServices = async () => {
-        const  {data} = await axios.get(`http://localhost:5000/services/${user?.email}`);
+        const  {data} = await axios.get(`https://service-sharing-server-one.vercel.app/services/${user?.email}`);
         setServices(data)
     }
 
       // Delete functionality
   const handleDelete = async (id) => {
     try {
-        await axios.delete(`http://localhost:5000/service/${id}`);
+        await axios.delete(`https://service-sharing-server-one.vercel.app/service/${id}`);
      toast.success("data successfully deleted")
       fetchAllServices()
     } catch (error) {
@@ -47,9 +47,9 @@ const ManageServices = () => {
   }
     return (
         <section className='container px-4 mx-auto pt-12'>
-                          <Helmet>
-                              <title>SwiftServe | Manage Service</title>
-                          </Helmet>
+        <Helmet>
+          <title>SwiftServe | Manage Service</title>
+         </Helmet>
       <div className='flex items-center gap-x-3'>
         <h2 className='text-lg font-medium text-gray-800 '>My Services</h2>
 
@@ -103,9 +103,6 @@ const ManageServices = () => {
                       Manage Your Service
                     </th>
 
-                    {/* <th className='px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500'>
-                      Edit
-                    </th> */}
                   </tr>
                 </thead>
                 <tbody className='bg-white divide-y divide-gray-200 '>
@@ -122,15 +119,6 @@ const ManageServices = () => {
                       <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                         ${service.price}
                       </td>
-                      {/* <td className='px-4 py-4 text-sm whitespace-nowrap'>
-                        <div className='flex items-center gap-x-2'>
-                          <p
-                            className={`px-3 py-1 ${job.category === 'Web Development' && 'text-blue-500 bg-blue-100/60'} ${job.category === 'Graphics Design' && 'text-green-500 bg-green-100/60'} ${job.category === 'Digital Marketing' && 'text-red-500 bg-red-100/60'}   text-xs  rounded-full`}
-                          >
-                            {job.category}
-                          </p>
-                        </div>
-                      </td> */}
                       <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                         {service.description.substring(0, 18)}...
                       </td>

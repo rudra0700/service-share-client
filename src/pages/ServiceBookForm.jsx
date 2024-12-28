@@ -18,7 +18,7 @@ const ServiceBookForm = () => {
      }, [id])
  
      const fetchSingleService = async () => {
-         const {data} = await axios.get(`http://localhost:5000/service/${id}`);
+         const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/service/${id}`);
          console.log(data);
          setService(data)
      }
@@ -37,13 +37,13 @@ const ServiceBookForm = () => {
         const description = form.description.value
         const status = "Pending";
 
-        if(user?.email === provider?.email) return toast.error("Provider Can't book own service")
+        // if(user?.email === provider?.email) return toast.error("Provider Can't book own service")
          
         const bookingData = {job_id, serviceName, providerEmail, providerName, email, price, date, description, status}
 
         try {
             // make post request
-            await axios.post(`http://localhost:5000/bookingServices`, bookingData);
+            await axios.post(`https://service-sharing-server-one.vercel.app/bookingServices`, bookingData);
             form.reset();
             toast.success("Service booked successfully")
             navigate('/bookedService')

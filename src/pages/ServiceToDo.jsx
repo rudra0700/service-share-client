@@ -13,14 +13,14 @@ const ServiceToDo = () => {
       }, [user?.email])
     
       const fetchAllBookedService = async () => {
-        const {data} = await axios.get(`http://localhost:5000/service-to-do/${user?.email}`);
+        const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/service-to-do/${user?.email}`);
         setBookedServices(data)
       }
 
       console.log(bookedServices)
     
     return (
-        <section className='container px-4 mx-auto my-12'>
+        <section className='container px-4 mx-auto my-12 min-h-[calc(100vh-370px)]'>
       <div className='flex items-center gap-x-3'>
         <h2 className='text-lg font-medium text-gray-800 '>Service To Do</h2>
 

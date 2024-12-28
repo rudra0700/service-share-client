@@ -35,7 +35,7 @@ const AddService = () => {
          }
 
         try {
-            const {data} = await axios.post("http://localhost:5000/add-service", formData);
+            const {data} = await axios.post("https://service-sharing-server-one.vercel.app/add-service", formData);
             form.reset()
             navigate('/manageServices')
             toast.success("Service added successfully")
@@ -45,11 +45,10 @@ const AddService = () => {
         }
     }
     return (
-        <div>
-            
-                           <Helmet>
-                              <title>SwiftServe | Add Service</title>
-                          </Helmet>
+        <div>   
+         <Helmet>
+             <title>SwiftServe | Add Service</title>
+         </Helmet>
             <h3 className='text-center text-3xl font-semibold'>Add Your Service</h3>
              <form className='max-w-7xl mx-auto min-h-[calc(100vh-306px)] mt-5' onSubmit={handleAddService}>
                  <div className='flex gap-4 flex-col lg:flex-row'>

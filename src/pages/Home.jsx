@@ -18,7 +18,7 @@ const Home = () => {
     }, [])
 
     const fetchAllServices = async  () => {
-        const {data} = await axios.get("http://localhost:5000/services")
+        const {data} = await axios.get("https://service-sharing-server-one.vercel.app/services")
         // console.log(data);
         setServices(data);
     }
@@ -30,7 +30,7 @@ const Home = () => {
             <Slider></Slider>
             <div className='flex justify-between items-center max-w-7xl mx-auto'>
                 <h3 className='mb-4 text-center text-3xl font-semibold'>Popular Services</h3>
-                <Link to={'/allServices'}>View All</Link>
+                <Link to={'/allServices'} className='font-semibold text-gray-600' >View All</Link>
             </div>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-10'>
                 {
@@ -47,7 +47,7 @@ const Home = () => {
                </div>
                <div className='flex max-w-7xl mx-auto gap-10 items-center mt-5 flex-col lg:flex-row'>
                    <div className='flex-1'>
-                      <img src={carryImg} alt="" />
+                      <img src={carryImg} alt="" className='rounded-lg' />
                    </div>
                    <div className='space-y-16'>
                        <div className='flex gap-4 items-center'>
@@ -103,8 +103,8 @@ const Home = () => {
                             Gloves</p>
                         </div>
                     </div>
-                    <div className=''>
-                        <img src={carryImg} alt="" />
+                    <div className='flex-1'>
+                        <img src="https://i.ibb.co.com/LQhS5jk/home-safety.jpg" alt="" className='rounded-lg' />
                     </div>
                 </div>
         </div>

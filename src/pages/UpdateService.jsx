@@ -12,7 +12,7 @@ const UpdateService = () => {
 
     useEffect(() => {
         const fetchAllServices = async () => {
-            const {data} = await axios.get(`http://localhost:5000/service/${id}`)
+            const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/service/${id}`)
             setService(data)
         }
 
@@ -42,7 +42,7 @@ const UpdateService = () => {
 
 
        try {
-        const {data} =  await axios.put(`http://localhost:5000/update-service/${id}`,  formData);
+        const {data} =  await axios.put(`https://service-sharing-server-one.vercel.app/update-service/${id}`,  formData);
         console.log(data);
         toast.success("service updated successfully")
         navigate('/manageServices')  

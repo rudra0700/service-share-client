@@ -11,7 +11,7 @@ const AllServices = () => {
 
     useEffect(() => {
         const fetchAllServices = async () => {
-            const  {data} = await axios.get(`http://localhost:5000/all-services?search=${search}&sort=${sort}`);
+            const  {data} = await axios.get(`https://service-sharing-server-one.vercel.app/all-services?search=${search}&sort=${sort}`);
             setServices(data)
         }
         
@@ -26,26 +26,11 @@ const AllServices = () => {
        }
     return (
         <div className='container px-6 py-10 mx-auto min-h-[calc(100vh-306px)] flex flex-col justify-between'>
-                         <Helmet>
-                              <title>SwiftServe | All Services</title>
-                          </Helmet>
+             <Helmet>
+               <title>SwiftServe | All Services</title>
+             </Helmet>            
         <div>
           <div className='flex flex-col md:flex-row justify-center items-center gap-5 '>
-            <div>
-              {/* <select
-                name='category'
-                id='category'
-                onChange={(e) => setFilter(e.target.value)}
-                className='border p-4 rounded-lg'
-                value={filter}
-              >
-                <option value=''>Filter By Category</option>
-                <option value='Web Development'>Web Development</option>
-                <option value='Graphics Design'>Graphics Design</option>
-                <option value='Digital Marketing'>Digital Marketing</option>
-              </select> */}
-            </div>
-  
             <form>
               <div className='flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-blue-400 focus-within:ring-blue-300'>
                 <input

@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react';
 import loginLottie from '../assets/lottifiles/login.json'
 import googleLogo from '../assets/google login logo.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../provider/AuthProvider';
 import toast from 'react-hot-toast';
@@ -9,6 +9,9 @@ import {Helmet} from "react-helmet";
 
 const Login = () => {
     const {loginUser, googleLogin} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state || '/';
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -23,6 +26,13 @@ const Login = () => {
             toast.error(error?.message)
         }
     }
+
+    const handleGoogleLogin = () => {
+      googleLogin()
+      .then(() => {
+        navigate(from)
+      })
+    }
     return (
         <div className="hero min-h-screen">
                           <Helmet>
@@ -35,7 +45,7 @@ const Login = () => {
           <div className="card bg-base-100 w-full lg:max-w-sm shrink-0 shadow-2xl">
                   <img src='/public/service reg log icon.png' className='w-10 mx-auto mt-10' alt="" />
                 <h4 className='text-center mt-8 mb-4 text-xl text-gray-600'>Welcome back</h4>
-                <div onClick={googleLogin} className='flex items-center gap-8 md:gap-24 lg:gap-14  border border-gray-200 p-1 rounded-md mr-8 ml-8'>
+                <div onClick={handleGoogleLogin} className='flex items-center gap-8 md:gap-24 lg:gap-14  border border-gray-200 p-1 rounded-md mr-8 ml-8'>
                     <img src={googleLogo} className='w-10' alt="google logo" />
                     <p className='font-medium text-gray-600'>Sign in with Google</p>
                </div>

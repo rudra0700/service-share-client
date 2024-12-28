@@ -14,14 +14,14 @@ const BookedService = () => {
       }, [user?.email])
     
       const fetchAllBookedService = async () => {
-         const {data} = await axios.get(`http://localhost:5000/bookingServices/${user?.email}`);
+         const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/bookingServices/${user?.email}`);
          setBookedServices(data)
       }
 
       console.log(bookedServices);
 
     return (
-        <section className='container px-4 mx-auto my-12'>
+        <section className='container px-4 mx-auto my-12 min-h-[calc(100vh-306px)]'>
               <Helmet>
                   <title>SwiftServe | Booked Service</title>
               </Helmet>
