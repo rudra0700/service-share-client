@@ -18,7 +18,7 @@ const BookedService = () => {
          setBookedServices(data)
       }
 
-      console.log(bookedServices);
+
 
     return (
         <section className='container px-4 mx-auto my-12 min-h-[calc(100vh-306px)]'>

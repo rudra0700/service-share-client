@@ -19,7 +19,6 @@ const AddService = () => {
         const area = form.area.value;
         const description = form.description.value;
 
-        // console.log(photo, serviceName, price, area, description);
 
         const formData = {
             photo,
@@ -83,7 +82,7 @@ const AddService = () => {
                         <label className="label">
                             <span className="label-text font-semibold text-gray-600">Description</span>
                         </label>
-                        <textarea placeholder='bio' name='description' className="textarea textarea-bordered textarea-lg" required />
+                        <textarea name='description' className="textarea textarea-bordered textarea-lg" required />
                     </div> 
                  <button className="btn w-full btn-neutral mt-5">Add Service</button>
              </form>

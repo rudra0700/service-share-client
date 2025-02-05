@@ -19,7 +19,7 @@ const UpdateService = () => {
         fetchAllServices()
     }, [id]);
 
-    console.log(service);
+
 
      const handleUpdateService = async (e) => {
         e.preventDefault();
@@ -31,7 +31,7 @@ const UpdateService = () => {
         const area = form.area.value;
         const description = form.description.value;
 
-        // console.log(photo, serviceName, price, area, description);
+
         const formData = {
             photo,
             serviceName,
@@ -43,7 +43,7 @@ const UpdateService = () => {
 
        try {
         const {data} =  await axios.put(`https://service-sharing-server-one.vercel.app/update-service/${id}`,  formData);
-        console.log(data);
+    
         toast.success("service updated successfully")
         navigate('/manageServices')  
        } catch (error) {

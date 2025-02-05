@@ -18,7 +18,7 @@ const AllServices = () => {
         fetchAllServices()
     }, [search, sort])
 
-    console.log(services);
+ 
 
     const handleReset = () => {
         setSearch('')
@@ -63,7 +63,7 @@ const AllServices = () => {
             </div>
             <button className='btn' onClick={handleReset}>Reset</button>
           </div>
-          <div className='grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+          <div className='grid grid-cols-1 gap-6 mt-8 xl:mt-16 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto'>
             {
               services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
             }

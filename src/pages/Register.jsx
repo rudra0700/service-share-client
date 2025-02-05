@@ -20,13 +20,13 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value
 
-        // console.log(name, photo, email, password);
+    
         try {
             const result = await createUser(email, password);
             await updateProfileUser(name, photo)
             setUser({...result.user, displayName: name, photURL: photo})
-            console.log(result.user);
             toast.success("Signup Successfull")
+            navigate('/')
         } catch (error) {
             toast.error(error.message);
         }

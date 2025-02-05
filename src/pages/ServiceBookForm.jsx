@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,6 +10,7 @@ import {Helmet} from "react-helmet";
 const ServiceBookForm = () => {
     const {user} = useContext(AuthContext)
     const {id} = useParams();
+      const navigate = useNavigate()
      const [service, setService] = useState({});
      const [startDate, setStartDate] = useState(new Date());
 
@@ -19,7 +20,6 @@ const ServiceBookForm = () => {
  
      const fetchSingleService = async () => {
          const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/service/${id}`);
-         console.log(data);
          setService(data)
      }
 

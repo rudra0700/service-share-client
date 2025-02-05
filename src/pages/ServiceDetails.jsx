@@ -16,7 +16,6 @@ const ServiceDetails = () => {
 
     const fetchSingleService = async () => {
         const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/service/${id}`);
-        console.log(data);
         setService(data)
     }
 

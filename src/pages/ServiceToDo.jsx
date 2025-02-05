@@ -16,8 +16,6 @@ const ServiceToDo = () => {
         const {data} = await axios.get(`https://service-sharing-server-one.vercel.app/service-to-do/${user?.email}`);
         setBookedServices(data)
       }
-
-      console.log(bookedServices)
     
     return (
         <section className='container px-4 mx-auto my-12 min-h-[calc(100vh-370px)]'>

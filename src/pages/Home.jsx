@@ -19,7 +19,6 @@ const Home = () => {
 
     const fetchAllServices = async  () => {
         const {data} = await axios.get("https://service-sharing-server-one.vercel.app/services")
-        // console.log(data);
         setServices(data);
     }
     return (
